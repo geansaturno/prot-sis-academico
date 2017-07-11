@@ -21,7 +21,7 @@ gulp.task('less-standalone', ["clean-standalone"], function() {
       .pipe(gulp.dest('css/standalone'));
 });
 
-gulp.task('default', () => {
+gulp.task('default', ['less', 'less-standalone'], () => {
     gulp.watch('less/bootstrap/**/*.less', ['less']);
     gulp.watch('less/standalone/**/*.less', ['less-standalone']);
 });
